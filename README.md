@@ -35,7 +35,7 @@ setDefaultLocale(new i18n(dict, pluralizer));
 ```
 
 **somewhere.ts**
-```
+```ts
 import {T} from '@artifact-project/i18n';
 
 T('required'); // No empty
