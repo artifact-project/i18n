@@ -122,7 +122,7 @@ export class i18n {
 }
 
 
-const defaultLocale = new i18n({});
+export const defaultLocale = new i18n({});
 
 export const T = (target: string | Token, dict?: SimpleDict) => defaultLocale.get(target, dict);
 export const P = (dictName: string, num: number, glue?: string) => defaultLocale.plural(dictName, num, glue);
@@ -132,5 +132,3 @@ export function setDefaultLocale(locale: i18n) {
 	defaultLocale.locale = locale.locale;
 	defaultLocale.pluralizer = locale.pluralizer;
 }
-
-export default defaultLocale;
