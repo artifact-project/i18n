@@ -46,8 +46,8 @@ export type SimpleDict = {
 	[value: string]: string;
 };
 
-export const EN_PLURAL: Pluralizer = (num: number): keyof PluralCardinalDict => {
-	return num === 0 ? '=0' : (name === 1 ? 'one' : 'other');
+export const DEFAULT_PLURALIZER: Pluralizer = (num: number): keyof PluralCardinalDict => {
+	return 'other';
 };
 
 export class i18n {
@@ -57,7 +57,7 @@ export class i18n {
 	locale: LocaleRawValues = {};
 	pluralizer: Pluralizer;
 
-	constructor(locale: LocaleValues, plural: Pluralizer = EN_PLURAL) {
+	constructor(locale: LocaleValues, plural: Pluralizer = DEFAULT_PLURALIZER) {
 		this.set(locale);
 		this.pluralizer = plural;
 
