@@ -1,6 +1,6 @@
 i18n
 ----
-Simple a module for internalization.
+Simple a module for internalization with support some feature CLDR.
 
 ```
 npm i --save @artifact-project/i18n

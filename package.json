@@ -1,7 +1,7 @@
 {
   "name": "@artifact-project/i18n",
   "version": "0.1.0",
-  "description": "Simple a module for internalization.",
+  "description": "Simple a module for internalization with support some feature CLDR.",
   "author": "RubaXa <ibnRubaXa@gmail.com>",
   "license": "MIT",
   "repository": "git@github.com:artifact-project/i18n.git",
