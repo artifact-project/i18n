@@ -26,7 +26,7 @@ it('i18n / get', () => {
 	})).toBe('Min 6 symbols');
 });
 
-xit('i18n / plural', () => {
+it('i18n / plural', () => {
 	const en = new i18n({
 		items: {
 			cardinal: {
@@ -36,7 +36,15 @@ xit('i18n / plural', () => {
 			},
 		},
 	}, createPluralizer({
-		one: 'i = 1 and v = 0',
+		cardinal: {
+			one: 'i = 1 and v = 0',
+			other: '',
+		},
+		range: {
+			'one+other': 'other',
+			'other+one': 'other',
+			'other+other': 'other',
+		},
 	}));
 
 	expect(en.plural('not-exists', 0)).toBe('0');
