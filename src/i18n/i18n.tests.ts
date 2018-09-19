@@ -26,7 +26,7 @@ it('i18n / get', () => {
 	})).toBe('Min 6 symbols');
 });
 
-it('i18n / plural', () => {
+xit('i18n / plural', () => {
 	const en = new i18n({
 		items: {
 			cardinal: {
