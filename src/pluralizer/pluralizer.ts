@@ -22,7 +22,8 @@ export type PluralRules = {
 export type CardinalPlural = (num: number | string) => PluralCategory;
 export type RangePlural = (start: number | string, end: number | string) => PluralCategory;
 
-export interface Plural {
+export interface Plural<R extends PluralRules> {
+	rules: R;
 	(num: number | string): PluralCategory;
 	(start: number | string, end: number | string): PluralCategory;
 }
@@ -41,7 +42,10 @@ function compile(condition: string): string {
 	}
 
 	return condition
-		.replace(R_RAGNES, (_, val, not = '', min, max) => ` ${not}(${val} >= ${min} and ${val} <= ${max})`)
+		.replace(
+			R_RAGNES,
+			(_, val, not = '', min, max) => ` ${not}(${val} >= ${min} and ${val} <= ${max})`,
+		)
 		.replace(R_OPERATORS, (_, x) => ` ${OPERATORS[x]} `)
 	;
 }
@@ -115,14 +119,31 @@ function createRange(rules: PluralRules['range'], cardinal: CardinalPlural): Ran
 	};
 }
 
-export default function createPlural(rules: PluralRules): Plural {
+function setHiddenProp<
+	T extends object,
+	K extends string,
+	V extends any,
+	R extends T & {
+		readonly [X in K]: V;
+	},
+>(target: T, name: K, value: V): R {
+	Object.defineProperty(target, name, {
+		value,
+		enumerable: false,
+	});
+
+	return target as R;
+}
+export default function createPlural<R extends PluralRules>(rules: R): Plural<R> {
 	const cardinal = createCardinal(rules.cardinal);
 	const range = createRange(rules.range, cardinal);
 
-	return function () {
+	function plural() {
 		return arguments.length === 1
 			? cardinal(arguments[0])
 			: range(arguments[0], arguments[1])
 		;
-	};
+	}
+
+	return setHiddenProp(plural, 'rules', rules);
 }
