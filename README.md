@@ -14,11 +14,14 @@ npm i --save @artifact-project/i18n
 import { i18n, setDefaultLocale } from '@artifact-project/i18n';
 
 // http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html#en
-const pluralizer = createPluralizer({
+const pluralizer = createPluralizer('en', {
+	name: 'English',
+
 	cardinal: {
 		one: 'i = 1 and v = 0',
 		other: '',
 	},
+
 	range: {
 		'one+other': 'other',
 		'other+one': 'other',

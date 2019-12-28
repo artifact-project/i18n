@@ -54,17 +54,18 @@ type ToIntersect<U> =
 ;
 type FlattenObject<T> = T extends object ? {[K in keyof T]: T[K]} : never;
 
+export type CardinalRules = {
+	[K in PluralCategory]?: string;
+};
+
+export type RangeRules = {
+	[K in RangeCategory]?: PluralCategory;
+};
+
 export type PluralRules = {
-	code?: string;
 	name?: string;
-
-	cardinal: {
-		[K in PluralCategory]?: string;
-	};
-
-	range: {
-		[K in RangeCategory]?: PluralCategory;
-	};
+	cardinal: CardinalRules;
+	range: RangeRules;
 };
 
 export type ExceptionLocale = {
@@ -72,18 +73,18 @@ export type ExceptionLocale = {
 		[num: number]: string;
 	};
 };
-export type CardinalLocale = PluralRules['cardinal'];
+export type CardinalLocale = CardinalRules;
 export type RangeLocale = { [K in PluralCategory]?: string };
 
-export type RangeRulesToCardinal<
-	R extends PluralRules['range'],
-> = FlattenObject<
-	ToIntersect<
-		{
-			[K in keyof R]: Record<Cast<R[K], PluralCategory>, string>;
-		}[keyof R]
+export type RangeRulesToCardinal<R extends RangeRules> =
+	FlattenObject<
+		ToIntersect<
+			{
+				[K in keyof R]: Record<Cast<R[K], PluralCategory>, string>;
+			}[keyof R]
+		>
 	>
->;
+;
 
 export interface CardinalPlural<CL extends CardinalLocale> {
 	(num: number | string): PluralCategory;
@@ -95,12 +96,12 @@ export interface RangePlural<RL extends RangeLocale> {
 	(start: number | string, end: number | string, locale: RL & ExceptionLocale): string;
 };
 
-export interface Plural<R extends PluralRules> extends
+export interface Plural<C extends string, R extends PluralRules> extends
 	CardinalPlural<R['cardinal']>,
 	RangePlural<RangeRulesToCardinal<R['range']>>
 {
-	code: R['code'];
-	name: R['name'];
+	code: C;
+	name?: string;
 	rules: R;
 }
 
@@ -178,7 +179,7 @@ function createRange<
 	CL extends CardinalLocale,
 	RL extends RangeLocale,
 >(
-	rules: PluralRules['range'],
+	rules: RangeRules,
 	cardinal: CardinalPlural<CL>,
 ): RangePlural<RL> {
 	Object.keys(rules).forEach(key => {
@@ -218,7 +219,10 @@ function createRange<
 	};
 }
 
-export default function createPlural<R extends PluralRules>(rules: R): Plural<R> {
+export default function createPlural<
+	C extends string,
+	R extends PluralRules,
+>(code: C, rules: R): Plural<C, R> {
 	const cardinal = createCardinal(rules.cardinal);
 	const range = createRange(rules.range, cardinal);
 
@@ -230,7 +234,7 @@ export default function createPlural<R extends PluralRules>(rules: R): Plural<R>
 		;
 	}
 
-	setHiddenProp(plural, 'code', rules.code);
+	setHiddenProp(plural, 'code', code);
 	setHiddenProp(plural, 'name', rules.name);
 
 	return setHiddenProp(plural, 'rules', rules);
