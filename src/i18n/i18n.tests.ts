@@ -35,7 +35,7 @@ it('i18n / plural', () => {
 				other: 'items',
 			},
 		},
-	}, createPluralizer({
+	}, createPluralizer('en', {
 		cardinal: {
 			one: 'i = 1 and v = 0',
 			other: '',
