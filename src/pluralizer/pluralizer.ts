@@ -263,7 +263,7 @@ function getLocaleValue(key: string, category: PluralCategory, locale: object): 
 		val = locale['='][key];
 	}
 
-	if (val.indexOf('#') > -1) {
+	if (val && val.indexOf('#') > -1) {
 		val = val.replace(rHASH, key);
 	}
 
