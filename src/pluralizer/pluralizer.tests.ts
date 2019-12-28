@@ -1,7 +1,10 @@
-import createPluralizer, {PluralCategory, PluralRules} from './pluralizer';
+import createPluralizer, { PluralCategory, PluralRules } from './pluralizer';
 import ruFixture from './fixture/ru';
 
 type PluralLocale = {
+	code?: string;
+	name?: string;
+
 	cardinal: {
 		[K in PluralCategory]: {
 			rules: string;
@@ -15,6 +18,8 @@ type PluralLocale = {
 			test: string;
 		};
 	};
+
+	ordinal?: object;
 }
 
 function createPluralizerHelper(pluralLocale: PluralLocale) {
@@ -28,15 +33,8 @@ function createPluralizerHelper(pluralLocale: PluralLocale) {
 		}, {} as PluralRules['cardinal']),
 
 		range: Object.keys(pluralLocale.range).reduce((map, key: PluralCategory) => {
-			const range = key.split('+');
 			const value = pluralLocale.range[key];
-
-			if (!map[range[0]]) {
-				map[range[0]] = {};
-			}
-
-			map[range[0]][range[1]] = value.rules;
-
+			map[key] = value.rules;
 			return map;
 		}, {} as PluralRules['range']),
 	});
@@ -59,7 +57,7 @@ function testValues(input: string) {
 }
 
 describe('ru', () => {
-	const plural = createPluralizerHelper(ruFixture);
+	const plural = createPluralizerHelper(ruFixture as any);
 
 	it('cardinal: auto', () => {
 		Object.keys(ruFixture.cardinal).forEach((key) => {
@@ -77,6 +75,7 @@ describe('ru', () => {
 	});
 
 	it('range: manual', () => {
+		expect(plural(1, 21)).toBe('one');
 		expect(plural(1, 2)).toBe('few');
 	});
 });
@@ -105,5 +104,50 @@ describe('en', () => {
 
 	it('range', () => {
 		expect(`${plural(1, 2)}: 1-2`).toBe('other: 1-2');
+	});
+});
+
+describe('with locale', () => {
+	const plural = createPluralizer({
+		cardinal: {
+			one: 'i = 1 and  v = 0',
+			other: '',
+		},
+
+		range: {
+			'one+other': 'other',
+			'other+one': 'other',
+			'other+other': 'other',
+		},
+	});
+
+	it('cardinal', () => {
+		const locale = {
+			one: 'message',
+			other: 'messages',
+			'=': {0: 'no message', 50: 'fifty messages'}
+		};
+		expect(plural(0, locale)).toBe('no message');
+		expect(plural(1, locale)).toBe('message');
+		expect(plural(2, locale)).toBe('messages');
+		expect(plural(50, locale)).toBe('fifty messages');
+	});
+
+	it('cardinal with value', () => {
+		const locale = {
+			one: '# message',
+			other: '# messages',
+		};
+		expect(plural(1, locale)).toBe('1 message');
+		expect(plural(2, locale)).toBe('2 messages');
+	});
+
+	it('range', () => {
+		const locale = {
+			other: 'messages',
+			'=': {'1+5': '1 & 5 messages'},
+		};
+		expect(plural(1, 2, locale)).toBe('messages');
+		expect(plural(1, 5, locale)).toBe('1 & 5 messages');
 	});
 });

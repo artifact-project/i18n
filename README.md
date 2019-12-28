@@ -11,7 +11,7 @@ npm i --save @artifact-project/i18n
 
 **cfg-default-locale.ts**
 ```ts
-import {i18n, setDefaultLocale} from '@artifact-project/i18n';
+import { i18n, setDefaultLocale } from '@artifact-project/i18n';
 
 // http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html#en
 const pluralizer = createPluralizer({
@@ -59,7 +59,7 @@ Open http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rule
 paste `parse` method and execute `JSON.stringify(parse('ru'), null, 2);` ;]
 
 ```js
-function parse(code, fotTest) {
+function parse(code, forTest) {
 	const cardinal = {};
 	const range = {};
 	const codeColumn = document.querySelector(`[name="${code}"]`).parentElement;
@@ -111,7 +111,7 @@ function parse(code, fotTest) {
 			rules = rules.replace(/[^a-z]/g, ' ').trim().split(/\s+/g).pop();
 		}
 
-		if (fotTest) {
+		if (forTest) {
 			result[type][category] = {
 				rules,
 				test: examples,
