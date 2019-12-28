@@ -55,6 +55,9 @@ type ToIntersect<U> =
 type FlattenObject<T> = T extends object ? {[K in keyof T]: T[K]} : never;
 
 export type PluralRules = {
+	code?: string;
+	name?: string;
+
 	cardinal: {
 		[K in PluralCategory]?: string;
 	};
@@ -96,6 +99,8 @@ export interface Plural<R extends PluralRules> extends
 	CardinalPlural<R['cardinal']>,
 	RangePlural<RangeRulesToCardinal<R['range']>>
 {
+	code: R['code'];
+	name: R['name'];
 	rules: R;
 }
 
@@ -224,6 +229,9 @@ export default function createPlural<R extends PluralRules>(rules: R): Plural<R>
 			: range(args[0], args[1], args[2])
 		;
 	}
+
+	setHiddenProp(plural, 'code', rules.code);
+	setHiddenProp(plural, 'name', rules.name);
 
 	return setHiddenProp(plural, 'rules', rules);
 }
