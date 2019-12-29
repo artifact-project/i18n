@@ -1,4 +1,4 @@
-import createPluralizer, { PluralCategory, CardinalRules, RangeRules } from './pluralizer';
+import { createPlural, PluralCategory, CardinalRules, RangeRules } from './plural';
 import ruFixture from './fixture/ru';
 
 type PluralLocale = {
@@ -22,8 +22,8 @@ type PluralLocale = {
 	ordinal?: object;
 }
 
-function createPluralizerHelper(pluralLocale: PluralLocale) {
-	return createPluralizer('any', {
+function createPluralHelper(pluralLocale: PluralLocale) {
+	return createPlural('any', {
 		cardinal: Object.keys(pluralLocale.cardinal).reduce((map, key: PluralCategory) => {
 			const value = pluralLocale.cardinal[key];
 
@@ -57,7 +57,7 @@ function testValues(input: string) {
 }
 
 describe('ru', () => {
-	const plural = createPluralizerHelper(ruFixture as any);
+	const plural = createPluralHelper(ruFixture as any);
 
 	it('cardinal: auto', () => {
 		Object.keys(ruFixture.cardinal).forEach((key) => {
@@ -81,7 +81,7 @@ describe('ru', () => {
 });
 
 describe('en', () => {
-	const plural = createPluralizer('en', {
+	const plural = createPlural('en', {
 		cardinal: {
 			one: 'i = 1 and  v = 0',
 			other: '',
@@ -108,7 +108,7 @@ describe('en', () => {
 });
 
 describe('with locale', () => {
-	const plural = createPluralizer('ru', {
+	const plural = createPlural('ru', {
 		cardinal: {
 			one: 'i = 1 and  v = 0',
 			other: '',

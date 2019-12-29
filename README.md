@@ -11,10 +11,10 @@ npm i --save @artifact-project/i18n
 
 **cfg-default-locale.ts**
 ```ts
-import { i18n, setDefaultLocale } from '@artifact-project/i18n';
+import { i18n, setDefaultLocale, createPlural } from '@artifact-project/i18n';
 
 // http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html#en
-const pluralizer = createPluralizer('en', {
+const plural = createPlural('en', {
 	name: 'English',
 
 	cardinal: {
@@ -42,7 +42,7 @@ const dict = {
 };
 
 // Set default
-setDefaultLocale(new i18n(dict, pluralizer));
+setDefaultLocale(new i18n(dict, plural));
 ```
 
 **somewhere.ts**

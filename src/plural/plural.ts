@@ -219,7 +219,7 @@ function createRange<
 	};
 }
 
-export default function createPlural<
+export function createPlural<
 	C extends string,
 	R extends PluralRules,
 >(code: C, rules: R): Plural<C, R> {

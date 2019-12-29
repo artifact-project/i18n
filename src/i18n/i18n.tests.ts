@@ -1,5 +1,5 @@
-import {i18n} from './i18n';
-import createPluralizer from '../pluralizer/pluralizer';
+import { i18n } from './i18n';
+import { createPlural } from '../plural/plural';
 
 it('i18n / get', () => {
 	const en = new i18n({
@@ -35,7 +35,7 @@ it('i18n / plural', () => {
 				other: 'items',
 			},
 		},
-	}, createPluralizer('en', {
+	}, createPlural('en', {
 		cardinal: {
 			one: 'i = 1 and v = 0',
 			other: '',
