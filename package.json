@@ -1,6 +1,6 @@
 {
   "name": "@artifact-project/i18n",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "A simple module for internationalization with support some feature CLDR.",
   "author": "RubaXa <ibnRubaXa@gmail.com>",
   "license": "MIT",
