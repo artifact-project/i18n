@@ -1,0 +1,11 @@
+__bench__
+__jest__
+coverage
+node_modules
+
+# Ignore the .ts files
+**/*.ts
+**/*.tsx
+
+# Revert the .d.ts files
+!**/*.d.ts
