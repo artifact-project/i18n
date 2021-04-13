@@ -235,7 +235,6 @@ export function createPlural<
 	}
 
 	setHiddenProp(plural, 'code', code);
-	setHiddenProp(plural, 'name', rules.name);
 
 	return setHiddenProp(plural, 'rules', rules);
 }

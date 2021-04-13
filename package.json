@@ -1,6 +1,6 @@
 {
   "name": "@artifact-project/i18n",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "A simple module for internationalization with support some feature CLDR.",
   "author": "RubaXa <ibnRubaXa@gmail.com>",
   "license": "MIT",
@@ -14,10 +14,10 @@
     "postpublish": "npm run git-clean"
   },
   "devDependencies": {
-    "@types/jest": "^25.1.4",
-    "jest": "^25.1.0",
-    "ts-jest": "^25.2.1",
-    "typescript": "^3.8.3"
+    "@types/jest": "^25.2.3",
+    "jest": "^25.5.4",
+    "ts-jest": "^25.5.1",
+    "typescript": "^3.9.9"
   },
   "jest": {
     "transform": {
@@ -25,7 +25,9 @@
     },
     "testRegex": "\\.tests\\.ts$",
     "transformIgnorePatterns": [],
-    "setupFilesAfterEnv": ["<rootDir>/__jest__/extensions.ts"],
+    "setupFilesAfterEnv": [
+      "<rootDir>/__jest__/extensions.ts"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
