@@ -61,7 +61,6 @@ typings/
 .npmyrc
 
 # Distributive
-dist
 compiled
 .parcel-cache/
 .DS_Store
