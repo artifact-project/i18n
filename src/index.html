@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>i18n Generators</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+	<style>
+		html {
+			--font-size: 16px;
+		}
+
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: var(--font-size);
+			max-width: 1000px;
+			margin: 0 auto;
+			padding: 50px;
+			text-align: center;
+		}
+
+		.generator textarea {
+			min-height: 400px;
+			width: 100%;
+			padding: 10px;
+			font-size: 12px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="generator">
+		<h2>Plural genrator</h2>
+		
+		<div id="langList">
+			Loading lang list...
+		</div>
+
+		<div id="resultBox" hidden>
+			<div>⬇️ copy result ⬇️</div>
+			<textarea id="jsCode" readonly onclick="this.select()"></textarea>
+		</div>
+	</div>
+
+	<script type="module">
+		import {generatePluralCardinalCategorizer} from './plural/internal.ts';
+		import dcl from './plural/dcl.json';
+
+		const sel = document.createElement('select');
+		let selIdx = 0;
+
+		dcl.forEach((lang, idx) => {
+			selIdx = lang.code === 'ru' ? idx : selIdx;
+
+			sel.appendChild(new Option(
+				`${lang.code} - ${lang.name}`,
+				lang.code,
+				lang.code === 'ru',
+			));
+		});
+
+		langList.textContent = '';
+		langList.appendChild(sel);
+		
+		sel.selectedIndex = selIdx;
+		sel.oninput = () => {
+			const lang = dcl[sel.selectedIndex];
+			const comment = `[${lang.code}] ${lang.name}:`;
+			const rules = `${lang.code}PluralRules`;
+			const categorizer = `${lang.code}PluralCardinalCategorizer`;
+			const plural = `${lang.code}Plural`;
+			
+			console.log('Selected:', lang);
+
+			jsCode.value = [
+				`import {createPlural, createPluralRules, createPluralCardinalCategorizer} from '@artifact-project/i18n';`,
+				``,
+				`/** ${comment} plural rules */`,
+				`const ${rules} = createPluralRules(${JSON.stringify({
+					...lang,
+					cardinal: undefined,
+					ordinal: undefined,
+				}, null, 2)});`,
+				``,
+				`/** ${comment} plural cardinal categorizer */`,
+				`const ${categorizer} = createPluralCardinalCategorizer(rules, ${generatePluralCardinalCategorizer(lang.cardinal).trim()});`,
+				``,
+				`/** ${comment} plural method (cardinal & range) */`,
+				`export const ${plural} = createPlural(${rules}, ${categorizer});`,
+				`export default ${plural};`,
+				``,
+			].join('\n');
+
+			resultBox.hidden = false;
+		};
+
+		sel.oninput();
+	</script>
+</body>
+</html>

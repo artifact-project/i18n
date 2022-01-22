@@ -6,28 +6,23 @@ A simple module for internationalization with support some feature CLDR.
 npm i --save @artifact-project/i18n
 ```
 
+---
+
+### Plural generator
+
+🤜 [https://artifact-project.github.io/i18n/](https://artifact-project.github.io/i18n/)
+
+---
 
 ### Usage
 
 **cfg-default-locale.ts**
 ```ts
-import { i18n, setDefaultLocale, createPlural } from '@artifact-project/i18n';
+import { i18n, setDefaultLocale } from '@artifact-project/i18n';
 
-// http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html#en
-const plural = createPlural('en', {
-	name: 'English',
+// 1. Open https://artifact-project.github.io/i18n/
+// 2. Choice a plural preset 
 
-	cardinal: {
-		one: 'i = 1 and v = 0',
-		other: '',
-	},
-
-	range: {
-		'one+other': 'other',
-		'other+one': 'other',
-		'other+other': 'other',
-	},
-});
 
 // Dictionary
 const dict = {
@@ -58,11 +53,17 @@ T('inline', {inline: 'Wow'}); // Wow
 
 ### CLRD Parse Helper
 
-Open http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html and DevTools, after
-paste `parse` method and execute `JSON.stringify(parse('ru'), null, 2);` ;]
+Open http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html and DevTools and execute ;]
 
 ```js
-function parse(code, forTest) {
+function parseLangList() {
+	return [...document.querySelectorAll('.dtf-s a[name][href^="#"]')]
+		.filter(a => a.name === a.href.split('#')[1])
+		.map(a => a.name)
+	;
+}
+
+function parseLang(code, forTest) {
 	const cardinal = {};
 	const range = {};
 	const codeColumn = document.querySelector(`[name="${code}"]`).parentElement;
@@ -71,6 +72,7 @@ function parse(code, forTest) {
 		code,
 		name: codeColumn.previousElementSibling.textContent.trim(),
 	};
+	const getText = (el) => el.innerHTML.replace(/<\/?[a-z][^>]*>|&[a-z]+;?/g, ' ').replace(/\s+/g, ' ').trim();
 
 	let offset = [].indexOf.call(allRows, codeColumn.parentNode);
 	let typeColumn = codeColumn.nextElementSibling;
@@ -83,25 +85,25 @@ function parse(code, forTest) {
 
 	for (let i = 0; i < maxColumns; i++) {
 		const cells = allRows[offset + i].cells;
-		const tmp = cells[0].textContent.trim();
+		const tmp = getText(cells[0]);
 
 		if (i === 0) {
-			type = cells[2].textContent.trim();
-			category = cells[3].textContent.trim();
-			examples = cells[4].textContent.trim();
-			minimalPairs = cells[5].textContent.trim();
-			rules = cells[6].textContent.trim();
+			type = getText(cells[2]);
+			category = getText(cells[3]);
+			examples = getText(cells[4]);
+			minimalPairs = getText(cells[5]);
+			rules = getText(cells[6]);
 		} else if (tmp === 'ordinal' || tmp === 'range') {
 			type = tmp;
-			category = cells[1].textContent.trim();
-			examples = cells[2].textContent.trim();
-			minimalPairs = cells[3].textContent.trim();
-			rules = cells[4].textContent.trim();
+			category = getText(cells[1]);
+			examples = getText(cells[2]);
+			minimalPairs = getText(cells[3]);
+			rules = getText(cells[4]);
 		} else {
 			category = tmp;
-			examples = cells[1].textContent.trim();
-			minimalPairs = cells[2].textContent.trim();
-			rules = cells[3].textContent.trim();
+			examples = getText(cells[1]);
+			minimalPairs = cells[3] ? getText(cells[2]) : '';
+			rules = getText(cells[3] || cells[2]);
 		}
 
 		rules = rules.replace(/\s+/g, ' ').trim();
@@ -127,6 +129,21 @@ function parse(code, forTest) {
 
 	return result;
 }
+
+// MAIN
+(() => {
+	const dcl = parseLangList()
+		.map(code => {
+			try {
+				return parseLang(code);
+			} catch (_) {}
+		})
+		.filter(Boolean)
+	;
+	
+	console.log(`Plural DCL Copied in Buffer:`, dcl);
+	copy(dcl);
+})();
 ```
 
 ### Development

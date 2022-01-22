@@ -1,12 +1,18 @@
 {
   "name": "@artifact-project/i18n",
-  "version": "0.7.0",
+  "version": "1.0.0-rc.1",
   "description": "A simple module for internationalization with support some feature CLDR.",
   "author": "RubaXa <ibnRubaXa@gmail.com>",
   "license": "MIT",
   "repository": "git@github.com:artifact-project/i18n.git",
   "main": "index.js",
+  "source": "./src/index.html",
+  "targets": {
+    "main": false
+  },
   "scripts": {
+    "start": "npx parcel",
+    "build": "npx parcel build",
     "test": "jest --coverage",
     "ts-build": "tsc",
     "git-clean": "git clean -f",
@@ -14,14 +20,15 @@
     "postpublish": "npm run git-clean"
   },
   "devDependencies": {
-    "@types/jest": "^25.2.3",
-    "jest": "^25.5.4",
-    "ts-jest": "^25.5.1",
-    "typescript": "^3.9.9"
+    "@types/jest": "^27.4.0",
+    "jest": "^27.4.7",
+    "parcel": "^2.2.1",
+    "ts-jest": "^27.1.3",
+    "typescript": "^4.5.5"
   },
   "jest": {
     "transform": {
-      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "^.+\\.tsx?$": "ts-jest"
     },
     "testRegex": "\\.tests\\.ts$",
     "transformIgnorePatterns": [],

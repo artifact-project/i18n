@@ -1,5 +1,6 @@
-import { createPlural, PluralCategory, CardinalRules, RangeRules } from './plural';
+import { createPlural, PluralCategory, CardinalRules, RangeRules, createPluralRules, createPluralCardinalCategorizer } from './plural';
 import ruFixture from './fixture/ru';
+import { generatePluralCardinalCategorizerFucntion } from './internal';
 
 type PluralLocale = {
 	code?: string;
@@ -23,7 +24,9 @@ type PluralLocale = {
 }
 
 function createPluralHelper(pluralLocale: PluralLocale) {
-	return createPlural('any', {
+	const rules = createPluralRules({
+		code: pluralLocale.code || 'any',
+		
 		cardinal: Object.keys(pluralLocale.cardinal).reduce((map, key: PluralCategory) => {
 			const value = pluralLocale.cardinal[key];
 
@@ -38,6 +41,9 @@ function createPluralHelper(pluralLocale: PluralLocale) {
 			return map;
 		}, {} as RangeRules),
 	});
+	const categorizer = generatePluralCardinalCategorizerFucntion(rules.cardinal);
+
+	return createPlural(rules, categorizer);
 }
 
 function testValues(input: string) {
@@ -75,13 +81,15 @@ describe('ru', () => {
 	});
 
 	it('range: manual', () => {
-		expect(plural(1, 21)).toBe('one');
-		expect(plural(1, 2)).toBe('few');
+		expect(plural.range(1, 21)).toBe('one');
+		expect(plural.range(1, 2)).toBe('few');
 	});
 });
 
 describe('en', () => {
-	const plural = createPlural('en', {
+	const rules = createPluralRules({
+		code: 'en',
+
 		cardinal: {
 			one: 'i = 1 and  v = 0',
 			other: '',
@@ -93,6 +101,8 @@ describe('en', () => {
 			'other+other': 'other',
 		},
 	});
+	const categorizer = generatePluralCardinalCategorizerFucntion(rules.cardinal);
+	const plural = createPlural(rules, categorizer);
 
 	it('cardinal', () => {
 		expect(`${plural(1)}: 1`).toBe('one: 1');
@@ -103,14 +113,16 @@ describe('en', () => {
 	});
 
 	it('range', () => {
-		expect(`${plural(1, 2)}: 1-2`).toBe('other: 1-2');
+		expect(`${plural.range(1, 2)}: 1-2`).toBe('other: 1-2');
 	});
 });
 
 describe('with locale', () => {
-	const plural = createPlural('ru', {
+	const rules = createPluralRules({
+		code: 'ru',
+
 		cardinal: {
-			one: 'i = 1 and  v = 0',
+			one: 'i = 1 and v = 0',
 			other: '',
 		},
 
@@ -120,17 +132,32 @@ describe('with locale', () => {
 			'other+other': 'other',
 		},
 	});
+	const categorizer = generatePluralCardinalCategorizerFucntion(rules.cardinal);
+	const plural = createPlural(rules, categorizer);
 
 	it('cardinal', () => {
 		const locale = {
 			one: 'message',
 			other: 'messages',
-			'=': {0: 'no message', 50: 'fifty messages'}
+			'=': {
+				0: 'no message',
+				50: 'fifty messages',
+			},
 		};
+
 		expect(plural(0, locale)).toBe('no message');
 		expect(plural(1, locale)).toBe('message');
 		expect(plural(2, locale)).toBe('messages');
 		expect(plural(50, locale)).toBe('fifty messages');
+	});
+
+	it('parial cardinal', () => {
+		const locale = {
+			one: 'message',
+			other: 'messages',
+		};
+
+		expect(plural(1, locale)).toBe('message');
 	});
 
 	it('cardinal with value', () => {
@@ -138,16 +165,53 @@ describe('with locale', () => {
 			one: '# message',
 			other: '# messages',
 		};
+
 		expect(plural(1, locale)).toBe('1 message');
 		expect(plural(2, locale)).toBe('2 messages');
 	});
 
 	it('range', () => {
 		const locale = {
+			one: 'message',
 			other: 'messages',
-			'=': {'1+5': '1 & 5 messages'},
+			'=': {
+				'1+5': '1 & 5 messages',
+			},
 		};
+
 		expect(plural(1, 2, locale)).toBe('messages');
-		expect(plural(1, 5, locale)).toBe('1 & 5 messages');
+		expect(plural.range(1, 5, locale)).toBe('1 & 5 messages');
 	});
 });
+
+it('generator', () => {
+	/** [en] English: plural rules */
+	const enPluralRules = createPluralRules({
+		"code": "en",
+		"name": "English",
+		"cardinal": {
+			"one": "i = 1 and v = 0",
+			"other": "",
+		},
+		"range": {
+			"one+other": "one + other → other",
+			"other+one": "other + one → other",
+			"other+other": "other + other → other"
+		}
+	});
+
+	/** [en] English: plural cardinal categorizer */
+	const enPluralCardinalCategorizer = createPluralCardinalCategorizer(enPluralRules, (n: string, i: number, f: number, v: number) => {
+		if (i == 1 && v == 0) {
+			return 'one';
+		}
+
+		return 'other';
+	});
+
+	/** [en] English: plural method (cardinal & range) */
+	const enPlural = createPlural(enPluralRules, enPluralCardinalCategorizer);
+	
+	expect(`${enPlural(1)}: 1`).toBe('one: 1');
+	expect(`${enPlural(0)}: 0`).toBe('other: 0');
+})

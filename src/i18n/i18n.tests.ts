@@ -1,5 +1,6 @@
 import { i18n } from './i18n';
-import { createPlural } from '../plural/plural';
+import { createPlural, createPluralRules } from '../plural/plural';
+import { generatePluralCardinalCategorizerFucntion } from '../plural/internal';
 
 it('i18n / get', () => {
 	const en = new i18n({
@@ -27,15 +28,8 @@ it('i18n / get', () => {
 });
 
 it('i18n / plural', () => {
-	const en = new i18n({
-		items: {
-			cardinal: {
-				'=0': 'no items',
-				one: 'item',
-				other: 'items',
-			},
-		},
-	}, createPlural('en', {
+	const rules = createPluralRules({
+		code: 'en',
 		cardinal: {
 			one: 'i = 1 and v = 0',
 			other: '',
@@ -45,7 +39,18 @@ it('i18n / plural', () => {
 			'other+one': 'other',
 			'other+other': 'other',
 		},
-	}));
+	});
+	const categorizer = generatePluralCardinalCategorizerFucntion(rules.cardinal);
+
+	const en = new i18n({
+		items: {
+			cardinal: {
+				'=0': 'no items',
+				one: 'item',
+				other: 'items',
+			},
+		},
+	}, createPlural(rules, categorizer));
 
 	expect(en.plural('not-exists', 0)).toBe('0');
 	expect(en.plural('items', 0)).toBe('no items');

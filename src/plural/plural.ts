@@ -46,23 +46,16 @@ export type RangeCategory =
 	| 'other+other'
 ;
 
-type Cast<X, Y> = X extends Y ? X : Y;
-type ToIntersect<U> =
-	(U extends any ? (inp: U) => void : never) extends ((out: infer I) => void)
-		? I
-		: never
-;
-type FlattenObject<T> = T extends object ? {[K in keyof T]: T[K]} : never;
-
 export type CardinalRules = {
 	[K in PluralCategory]?: string;
 };
 
 export type RangeRules = {
-	[K in RangeCategory]?: PluralCategory;
+	[K in RangeCategory]?: string;
 };
 
 export type PluralRules = {
+	code: string;
 	name?: string;
 	cardinal: CardinalRules;
 	range: RangeRules;
@@ -70,21 +63,14 @@ export type PluralRules = {
 
 export type ExceptionLocale = {
 	'='?: {
-		[num: number]: string;
+		[value: number | string]: string;
 	};
 };
 export type CardinalLocale = CardinalRules;
-export type RangeLocale = { [K in PluralCategory]?: string };
+export type RangeLocale = {
+	[K in PluralCategory]?: string;
+};
 
-export type RangeRulesToCardinal<R extends RangeRules> =
-	FlattenObject<
-		ToIntersect<
-			{
-				[K in keyof R]: Record<Cast<R[K], PluralCategory>, string>;
-			}[keyof R]
-		>
-	>
-;
 
 export interface CardinalPlural<CL extends CardinalLocale> {
 	(num: number | string): PluralCategory;
@@ -96,147 +82,21 @@ export interface RangePlural<RL extends RangeLocale> {
 	(start: number | string, end: number | string, locale: RL & ExceptionLocale): string;
 };
 
-export interface Plural<C extends string, R extends PluralRules> extends
+export interface Plural<R extends PluralRules> extends
 	CardinalPlural<R['cardinal']>,
-	RangePlural<RangeRulesToCardinal<R['range']>>
+	RangePlural<R['cardinal']>
 {
-	code: C;
-	name?: string;
-	rules: R;
+	code: R['code'];
+	range: RangePlural<R['cardinal']>;
 }
 
-const OPERATORS = {
-	'=': '==',
-	or: '||',
-	and: '&&',
-};
-const R_OPERATORS = new RegExp(`\\s+(${Object.keys(OPERATORS).join('|')})\\s+`, 'g');
-const R_RAGNES = /\s+([nifv][^=]*?)(!)?=\s+(\d+)\.\.(\d+)/g;
+export type PluralCardinalCategorizer<R extends CardinalLocale> = (n: string, i: number, f: number, v: number) => keyof R;
 
-function compile(condition: string): string {
-	if (condition === '') {
-		return 'true';
-	}
-
-	return condition
-		.replace(
-			R_RAGNES,
-			(_, val, not = '', min, max) => ` ${not}(${val} >= ${min} and ${val} <= ${max})`,
-		)
-		.replace(R_OPERATORS, (_, x) => ` ${OPERATORS[x]} `)
-	;
-}
-
-function createCardinal<R extends CardinalLocale>(rules: R): CardinalPlural<R> {
-	const cache = {};
-	const code = Object.keys(rules).map(key => `
-		if (${compile(rules[key])}) {
-			return '${key}';
-		}
-	`).join('') + `return 'other';`;
-	let fn: Function;
-
-	try {
-		fn = Function('n, i, f, v', code);
-	} catch (err) {
-		fn = function () {
-			return [err, code];
-		};
-	}
-
-	return (num: number | string, locale?: CardinalLocale) => {
-		const n = num + '';
-		let category = 'other' as PluralCategory;
-
-		if (cache.hasOwnProperty(n)) {
-			category = cache[n];
-		} else {
-			const dot = n.indexOf('.');
-			let i = 0;
-			let f = 0;
-			let v = 0;
-
-			if (dot > -1) {
-				i = +n.substr(dot);
-				f = +n.substr(dot + 1);
-				v = n.length - dot;
-			} else {
-				i = +num;
-			}
-
-			category = (cache[n] = fn(n, i, f, v));
-		}
-
-		if (locale != null) {
-			return getLocaleValue(n, category, locale) as any;
-		}
-
-		return category;
-	};
-}
-
-function createRange<
-	CL extends CardinalLocale,
-	RL extends RangeLocale,
->(
-	rules: RangeRules,
-	cardinal: CardinalPlural<CL>,
-): RangePlural<RL> {
-	Object.keys(rules).forEach(key => {
-		const pair = key.split('+');
-
-		if (pair.length) {
-			if (!rules.hasOwnProperty(pair[0])) {
-				rules[pair[0]] = {};
-			}
-
-			rules[pair[0]][pair[1]] = rules[key];
-		}
-	});
-
-	const cache = {};
-
-	return (start: number | string, end: number | string, locale?: RL) => {
-		const key = `${start}+${end}`;
-		let category = 'other' as PluralCategory;
-
-		if (cache.hasOwnProperty(key)) {
-			category = cache[key];
-		} else {
-			const rangeCategory = `${cardinal(start)}+${cardinal(end)}` as RangeCategory;
-
-			if (rules.hasOwnProperty(rangeCategory)) {
-				category = rules[rangeCategory]!;
-				cache[key] = category;
-			}
-		}
-
-		if (locale != null) {
-			return getLocaleValue(key, category, locale) as any;
-		}
-
-		return category;
-	};
-}
-
-export function createPlural<
-	C extends string,
-	R extends PluralRules,
->(code: C, rules: R): Plural<C, R> {
-	const cardinal = createCardinal(rules.cardinal);
-	const range = createRange(rules.range, cardinal);
-
-	function plural(...args: any[]) {
-		const length = args.length;
-		return length === 1 || length === 2 && typeof args[1] === 'object'
-			? cardinal(args[0], args[1])
-			: range(args[0], args[1], args[2])
-		;
-	}
-
-	setHiddenProp(plural, 'code', code);
-
-	return setHiddenProp(plural, 'rules', rules);
+export function createPluralCardinalCategorizer<R extends PluralRules>(
+	rules: R,
+	categorizer: PluralCardinalCategorizer<R['cardinal']>,
+): PluralCardinalCategorizer<R['cardinal']> {
+	return categorizer;
 }
 
 function setHiddenProp<
@@ -271,4 +131,107 @@ function getLocaleValue(key: string, category: PluralCategory, locale: object): 
 	}
 
 	return val;
+}
+
+function createCardinal<R extends CardinalLocale>(categorizer: PluralCardinalCategorizer<R>): CardinalPlural<R> {
+	const cache = {};
+
+	return (num: number | string, locale?: CardinalLocale) => {
+		const n = num + '';
+		let category = 'other' as keyof R;
+
+		if (cache.hasOwnProperty(n)) {
+			category = cache[n];
+		} else {
+			const dot = n.indexOf('.');
+			let i = 0;
+			let f = 0;
+			let v = 0;
+
+			if (dot > -1) {
+				i = +n.slice(dot);
+				f = +n.slice(dot + 1);
+				v = n.length - dot;
+			} else {
+				i = +num;
+			}
+
+			category = (cache[n] = categorizer(n, i, f, v));
+		}
+
+		if (locale != null) {
+			return getLocaleValue(n, category as any, locale) as any;
+		}
+
+		return category;
+	};
+}
+
+function createRange<
+	CL extends CardinalLocale,
+	RL extends RangeLocale,
+>(
+	rules: RangeRules,
+	cardinal: CardinalPlural<CL>,
+): RangePlural<RL> {
+	Object.keys(rules).forEach(key => {
+		const pair = key.split('+');
+
+		if (pair.length) {
+			if (!rules.hasOwnProperty(pair[0])) {
+				rules[pair[0]] = {};
+			}
+
+			rules[pair[0]][pair[1]] = rules[key];
+		}
+	});
+
+	const cache = {};
+
+	return (start: number | string, end: number | string, locale?: RL) => {
+		const key = `${start}+${end}`;
+		let category = 'other';
+
+		if (cache.hasOwnProperty(key)) {
+			category = cache[key];
+		} else {
+			const rangeCategory = `${cardinal(start)}+${cardinal(end)}` as RangeCategory;
+
+			if (rules.hasOwnProperty(rangeCategory)) {
+				category = rules[rangeCategory]!;
+				cache[key] = category;
+			}
+		}
+
+		if (locale != null) {
+			return getLocaleValue(key, category as any, locale) as any;
+		}
+
+		return category;
+	};
+}
+
+export function createPluralRules<R extends PluralRules>(rules: R): R {
+	return rules;
+}
+
+export function createPlural<R extends PluralRules>(
+	rules: R,
+	cardinalCategorizer: PluralCardinalCategorizer<R['cardinal']>,
+): Plural<R> {
+	const cardinal = createCardinal<R['cardinal']>(cardinalCategorizer);
+	const range = createRange(rules.range, cardinal);
+	const plural = (...args: any[]) => {
+		const length = args.length;
+
+		return length === 1 || length === 2 && typeof args[1] === 'object'
+			? cardinal(args[0], args[1])
+			: range(args[0], args[1], args[2])
+		;
+	};
+
+	setHiddenProp(plural, 'code', rules.code);
+	setHiddenProp(plural, 'range', range);
+
+	return plural as Plural<R>;
 }
