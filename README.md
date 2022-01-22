@@ -112,7 +112,7 @@ function parseLang(code, forTest) {
 			result[type] = {};
 		}
 
-		if (category === 'range') {
+		if (type === 'range') {
 			rules = rules.replace(/[^a-z]/g, ' ').trim().split(/\s+/g).pop();
 		}
 

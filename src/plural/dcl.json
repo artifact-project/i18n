@@ -10,9 +10,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → other",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "other",
+            "other+other": "other"
         }
     },
     {
@@ -23,10 +23,10 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → other",
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+one": "other",
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -42,9 +42,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -58,9 +58,9 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+other": "one + other → other",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+other": "other",
+            "other+other": "other"
         }
     },
     {
@@ -78,29 +78,29 @@
             "other": ""
         },
         "range": {
-            "zero+one": "zero + one → zero",
-            "zero+two": "zero + two → zero",
-            "zero+few": "zero + few → few",
-            "zero+many": "zero + many → many",
-            "zero+other": "zero + other → other",
-            "one+two": "one + two → other",
-            "one+few": "one + few → few",
-            "one+many": "one + many → many",
-            "one+other": "one + other → other",
-            "two+few": "two + few → few",
-            "two+many": "two + many → many",
-            "two+other": "two + other → other",
-            "few+few": "few + few → few",
-            "few+many": "few + many → many",
-            "few+other": "few + other → other",
-            "many+few": "many + few → few",
-            "many+many": "many + many → many",
-            "many+other": "many + other → other",
-            "other+one": "other + one → other",
-            "other+two": "other + two → other",
-            "other+few": "other + few → few",
-            "other+many": "other + many → many",
-            "other+other": "other + other → other"
+            "zero+one": "zero",
+            "zero+two": "zero",
+            "zero+few": "few",
+            "zero+many": "many",
+            "zero+other": "other",
+            "one+two": "other",
+            "one+few": "few",
+            "one+many": "many",
+            "one+other": "other",
+            "two+few": "few",
+            "two+many": "many",
+            "two+other": "other",
+            "few+few": "few",
+            "few+many": "many",
+            "few+other": "other",
+            "many+few": "few",
+            "many+many": "many",
+            "many+other": "other",
+            "other+one": "other",
+            "other+two": "other",
+            "other+few": "few",
+            "other+many": "many",
+            "other+other": "other"
         }
     },
     {
@@ -114,7 +114,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -129,9 +129,9 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+other": "one + other → other",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+other": "other",
+            "other+other": "other"
         }
     },
     {
@@ -149,9 +149,9 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+other": "one + other → other",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+other": "other",
+            "other+other": "other"
         }
     },
     {
@@ -162,7 +162,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -173,7 +173,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -190,9 +190,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -207,7 +207,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -217,7 +217,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -235,9 +235,9 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+other": "one + other → other",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+other": "other",
+            "other+other": "other"
         }
     },
     {
@@ -251,9 +251,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → other",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "other",
+            "other+other": "other"
         }
     },
     {
@@ -270,22 +270,22 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+few": "one + few → few",
-            "one+many": "one + many → many",
-            "one+other": "one + other → other",
-            "few+one": "few + one → one",
-            "few+few": "few + few → few",
-            "few+many": "few + many → many",
-            "few+other": "few + other → other",
-            "many+one": "many + one → one",
-            "many+few": "many + few → few",
-            "many+many": "many + many → many",
-            "many+other": "many + other → other",
-            "other+one": "other + one → one",
-            "other+few": "other + few → few",
-            "other+many": "other + many → many",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+few": "few",
+            "one+many": "many",
+            "one+other": "other",
+            "few+one": "one",
+            "few+few": "few",
+            "few+many": "many",
+            "few+other": "other",
+            "many+one": "one",
+            "many+few": "few",
+            "many+many": "many",
+            "many+other": "other",
+            "other+one": "one",
+            "other+few": "few",
+            "other+many": "many",
+            "other+other": "other"
         }
     },
     {
@@ -296,7 +296,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -307,7 +307,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -318,7 +318,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -329,7 +329,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -344,15 +344,15 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+few": "one + few → few",
-            "one+other": "one + other → other",
-            "few+one": "few + one → one",
-            "few+few": "few + few → few",
-            "few+other": "few + other → other",
-            "other+one": "other + one → one",
-            "other+few": "other + few → few",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+few": "few",
+            "one+other": "other",
+            "few+one": "one",
+            "few+few": "few",
+            "few+other": "other",
+            "other+one": "one",
+            "other+few": "few",
+            "other+other": "other"
         }
     },
     {
@@ -366,7 +366,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -380,9 +380,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → other",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "other",
+            "other+other": "other"
         }
     },
     {
@@ -395,7 +395,7 @@
             "other": ""
         },
         "range": {
-            "other+other": "other + other → other"
+            "other+other": "other"
         }
     },
     {
@@ -408,7 +408,7 @@
             "other": ""
         },
         "range": {
-            "other+other": "other + other → other"
+            "other+other": "other"
         }
     },
     {
@@ -425,9 +425,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → other",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "other",
+            "other+other": "other"
         }
     },
     {
@@ -438,7 +438,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -449,7 +449,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -460,7 +460,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -474,7 +474,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -485,7 +485,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -496,7 +496,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -509,7 +509,7 @@
             "other": ""
         },
         "range": {
-            "other+other": "other + other → other"
+            "other+other": "other"
         }
     },
     {
@@ -521,7 +521,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -541,7 +541,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -556,15 +556,15 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+few": "one + few → few",
-            "one+other": "one + other → other",
-            "few+one": "few + one → one",
-            "few+few": "few + few → few",
-            "few+other": "few + other → other",
-            "other+one": "other + one → one",
-            "other+few": "other + few → few",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+few": "few",
+            "one+other": "other",
+            "few+one": "one",
+            "few+few": "few",
+            "few+other": "other",
+            "other+one": "one",
+            "other+few": "few",
+            "other+other": "other"
         }
     },
     {
@@ -580,20 +580,20 @@
             "other": ""
         },
         "range": {
-            "one+few": "one + few → few",
-            "one+many": "one + many → many",
-            "one+other": "one + other → other",
-            "few+few": "few + few → few",
-            "few+many": "few + many → many",
-            "few+other": "few + other → other",
-            "many+one": "many + one → one",
-            "many+few": "many + few → few",
-            "many+many": "many + many → many",
-            "many+other": "many + other → other",
-            "other+one": "other + one → one",
-            "other+few": "other + few → few",
-            "other+many": "other + many → many",
-            "other+other": "other + other → other"
+            "one+few": "few",
+            "one+many": "many",
+            "one+other": "other",
+            "few+few": "few",
+            "few+many": "many",
+            "few+other": "other",
+            "many+one": "one",
+            "many+few": "few",
+            "many+many": "many",
+            "many+other": "other",
+            "other+one": "one",
+            "other+few": "few",
+            "other+many": "many",
+            "other+other": "other"
         }
     },
     {
@@ -607,10 +607,10 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -621,7 +621,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -632,7 +632,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -646,9 +646,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -658,7 +658,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -675,9 +675,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → other",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "other",
+            "other+other": "other"
         }
     },
     {
@@ -688,7 +688,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -702,9 +702,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → other",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "other",
+            "other+other": "other"
         }
     },
     {
@@ -716,12 +716,12 @@
             "other": ""
         },
         "range": {
-            "one+many": "one + many → null",
-            "one+other": "one + other → other",
-            "many+many": "many + many → null",
-            "other+one": "other + one → null",
-            "other+many": "other + many → null",
-            "other+other": "other + other → other"
+            "one+many": "null",
+            "one+other": "other",
+            "many+many": "null",
+            "other+one": "null",
+            "other+many": "null",
+            "other+other": "other"
         }
     },
     {
@@ -732,7 +732,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -743,7 +743,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -758,10 +758,10 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -775,9 +775,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → other",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "other",
+            "other+other": "other"
         }
     },
     {
@@ -793,12 +793,12 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+many": "one + many → null",
-            "one+other": "one + other → other",
-            "many+many": "many + many → null",
-            "other+many": "other + many → null",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+many": "null",
+            "one+other": "other",
+            "many+many": "null",
+            "other+many": "null",
+            "other+other": "other"
         }
     },
     {
@@ -809,7 +809,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -820,7 +820,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -834,9 +834,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -847,7 +847,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -863,9 +863,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → one",
-            "other+one": "other + one → other",
-            "other+other": "other + other → other"
+            "one+other": "one",
+            "other+one": "other",
+            "other+other": "other"
         }
     },
     {
@@ -879,9 +879,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -895,9 +895,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -915,9 +915,9 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+other": "one + other → other",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+other": "other",
+            "other+other": "other"
         }
     },
     {
@@ -928,7 +928,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -939,7 +939,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -950,7 +950,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -966,17 +966,17 @@
             "other": ""
         },
         "range": {
-            "one+two": "one + two → other",
-            "one+many": "one + many → many",
-            "one+other": "one + other → other",
-            "two+many": "two + many → other",
-            "two+other": "two + other → other",
-            "many+many": "many + many → many",
-            "many+other": "many + other → many",
-            "other+one": "other + one → other",
-            "other+two": "other + two → other",
-            "other+many": "other + many → many",
-            "other+other": "other + other → other"
+            "one+two": "other",
+            "one+many": "many",
+            "one+other": "other",
+            "two+many": "other",
+            "two+other": "other",
+            "many+many": "many",
+            "many+other": "many",
+            "other+one": "other",
+            "other+two": "other",
+            "other+many": "many",
+            "other+other": "other"
         }
     },
     {
@@ -994,9 +994,9 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+other": "one + other → other",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+other": "other",
+            "other+other": "other"
         }
     },
     {
@@ -1006,7 +1006,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1021,9 +1021,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -1037,10 +1037,10 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -1051,7 +1051,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1061,7 +1061,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1073,7 +1073,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1086,7 +1086,7 @@
             "other": ""
         },
         "range": {
-            "other+other": "other + other → other"
+            "other+other": "other"
         }
     },
     {
@@ -1100,7 +1100,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1112,7 +1112,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1130,23 +1130,23 @@
             "other": ""
         },
         "range": {
-            "one+two": "one + two → two",
-            "one+few": "one + few → few",
-            "one+many": "one + many → many",
-            "one+other": "one + other → other",
-            "two+few": "two + few → few",
-            "two+many": "two + many → many",
-            "two+other": "two + other → other",
-            "few+few": "few + few → few",
-            "few+many": "few + many → many",
-            "few+other": "few + other → other",
-            "many+many": "many + many → many",
-            "many+other": "many + other → other",
-            "other+one": "other + one → one",
-            "other+two": "other + two → two",
-            "other+few": "other + few → few",
-            "other+many": "other + many → many",
-            "other+other": "other + other → other"
+            "one+two": "two",
+            "one+few": "few",
+            "one+many": "many",
+            "one+other": "other",
+            "two+few": "few",
+            "two+many": "many",
+            "two+other": "other",
+            "few+few": "few",
+            "few+many": "many",
+            "few+other": "other",
+            "many+many": "many",
+            "many+other": "other",
+            "other+one": "one",
+            "other+two": "two",
+            "other+few": "few",
+            "other+many": "many",
+            "other+other": "other"
         }
     },
     {
@@ -1162,12 +1162,12 @@
             "other": ""
         },
         "range": {
-            "one+many": "one + many → null",
-            "one+other": "one + other → other",
-            "many+many": "many + many → null",
-            "other+one": "other + one → one",
-            "other+many": "other + many → null",
-            "other+other": "other + other → other"
+            "one+many": "null",
+            "one+other": "other",
+            "many+many": "null",
+            "other+one": "one",
+            "other+many": "null",
+            "other+other": "other"
         }
     },
     {
@@ -1180,7 +1180,7 @@
             "other": ""
         },
         "range": {
-            "other+other": "other + other → other"
+            "other+other": "other"
         }
     },
     {
@@ -1190,7 +1190,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1201,7 +1201,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1211,7 +1211,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1222,7 +1222,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1233,7 +1233,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1244,7 +1244,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1258,9 +1258,9 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+other": "one + other → other",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+other": "other",
+            "other+other": "other"
         }
     },
     {
@@ -1271,7 +1271,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1286,9 +1286,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -1301,7 +1301,7 @@
             "other": ""
         },
         "range": {
-            "other+other": "other + other → other"
+            "other+other": "other"
         }
     },
     {
@@ -1314,7 +1314,7 @@
             "other": ""
         },
         "range": {
-            "other+other": "other + other → other"
+            "other+other": "other"
         }
     },
     {
@@ -1324,7 +1324,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1335,7 +1335,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1349,9 +1349,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -1361,7 +1361,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1373,7 +1373,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1387,7 +1387,7 @@
             "other": ""
         },
         "range": {
-            "other+other": "other + other → other"
+            "other+other": "other"
         }
     },
     {
@@ -1402,15 +1402,15 @@
             "other": ""
         },
         "range": {
-            "zero+zero": "zero + zero → other",
-            "zero+one": "zero + one → one",
-            "zero+other": "zero + other → other",
-            "one+zero": "one + zero → other",
-            "one+one": "one + one → one",
-            "one+other": "one + other → other",
-            "other+zero": "other + zero → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "zero+zero": "other",
+            "zero+one": "one",
+            "zero+other": "other",
+            "one+zero": "other",
+            "one+one": "one",
+            "one+other": "other",
+            "other+zero": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -1425,7 +1425,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1436,7 +1436,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1452,22 +1452,22 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+few": "one + few → few",
-            "one+many": "one + many → many",
-            "one+other": "one + other → other",
-            "few+one": "few + one → one",
-            "few+few": "few + few → few",
-            "few+many": "few + many → many",
-            "few+other": "few + other → other",
-            "many+one": "many + one → one",
-            "many+few": "many + few → few",
-            "many+many": "many + many → many",
-            "many+other": "many + other → other",
-            "other+one": "other + one → one",
-            "other+few": "other + few → few",
-            "other+many": "other + many → many",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+few": "few",
+            "one+many": "many",
+            "one+other": "other",
+            "few+one": "one",
+            "few+few": "few",
+            "few+many": "many",
+            "few+other": "other",
+            "many+one": "one",
+            "many+few": "few",
+            "many+many": "many",
+            "many+other": "other",
+            "other+one": "one",
+            "other+few": "few",
+            "other+many": "many",
+            "other+other": "other"
         }
     },
     {
@@ -1477,7 +1477,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1493,7 +1493,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1505,7 +1505,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1516,7 +1516,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1533,10 +1533,10 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → other",
-            "one+other": "one + other → other",
-            "other+one": "other + one → other",
-            "other+other": "other + other → other"
+            "one+one": "other",
+            "one+other": "other",
+            "other+one": "other",
+            "other+other": "other"
         }
     },
     {
@@ -1547,7 +1547,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1557,7 +1557,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1568,7 +1568,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1582,7 +1582,7 @@
             "other": ""
         },
         "range": {
-            "other+other": "other + other → other"
+            "other+other": "other"
         }
     },
     {
@@ -1596,9 +1596,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -1611,7 +1611,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1625,7 +1625,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1642,9 +1642,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → null",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "null",
+            "other+other": "other"
         }
     },
     {
@@ -1655,7 +1655,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1666,7 +1666,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1687,9 +1687,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -1699,7 +1699,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1710,7 +1710,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1725,7 +1725,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1737,7 +1737,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1752,9 +1752,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -1765,7 +1765,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1776,7 +1776,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1787,9 +1787,9 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → null",
-            "one+other": "one + other → other",
-            "other+other": "other + other → other"
+            "one+one": "null",
+            "one+other": "other",
+            "other+other": "other"
         }
     },
     {
@@ -1800,7 +1800,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1812,7 +1812,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1823,7 +1823,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1837,9 +1837,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → other",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "other",
+            "other+other": "other"
         }
     },
     {
@@ -1853,9 +1853,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → other",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "other",
+            "other+other": "other"
         }
     },
     {
@@ -1866,7 +1866,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1877,7 +1877,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1888,7 +1888,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1906,9 +1906,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -1919,7 +1919,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1929,7 +1929,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1940,7 +1940,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1951,7 +1951,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -1965,9 +1965,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → null",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "null",
+            "other+other": "other"
         }
     },
     {
@@ -1981,9 +1981,9 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → other",
-            "one+other": "one + other → other",
-            "other+other": "other + other → other"
+            "one+one": "other",
+            "one+other": "other",
+            "other+other": "other"
         }
     },
     {
@@ -1999,20 +1999,20 @@
             "other": ""
         },
         "range": {
-            "one+few": "one + few → few",
-            "one+many": "one + many → many",
-            "one+other": "one + other → other",
-            "few+few": "few + few → few",
-            "few+many": "few + many → many",
-            "few+other": "few + other → other",
-            "many+one": "many + one → one",
-            "many+few": "many + few → few",
-            "many+many": "many + many → many",
-            "many+other": "many + other → other",
-            "other+one": "other + one → one",
-            "other+few": "other + few → few",
-            "other+many": "other + many → many",
-            "other+other": "other + other → other"
+            "one+few": "few",
+            "one+many": "many",
+            "one+other": "other",
+            "few+few": "few",
+            "few+many": "many",
+            "few+other": "other",
+            "many+one": "one",
+            "many+few": "few",
+            "many+many": "many",
+            "many+other": "other",
+            "other+one": "one",
+            "other+few": "few",
+            "other+many": "many",
+            "other+other": "other"
         }
     },
     {
@@ -2027,12 +2027,12 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+many": "one + many → null",
-            "one+other": "one + other → other",
-            "many+many": "many + many → null",
-            "other+many": "other + many → null",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+many": "null",
+            "one+other": "other",
+            "many+many": "null",
+            "other+many": "null",
+            "other+other": "other"
         }
     },
     {
@@ -2047,7 +2047,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2061,10 +2061,10 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -2080,13 +2080,13 @@
             "other": ""
         },
         "range": {
-            "one+few": "one + few → few",
-            "one+other": "one + other → other",
-            "few+one": "few + one → few",
-            "few+few": "few + few → few",
-            "few+other": "few + other → other",
-            "other+few": "other + few → few",
-            "other+other": "other + other → other"
+            "one+few": "few",
+            "one+other": "other",
+            "few+one": "few",
+            "few+few": "few",
+            "few+other": "other",
+            "other+few": "few",
+            "other+other": "other"
         }
     },
     {
@@ -2097,7 +2097,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2108,7 +2108,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2124,22 +2124,22 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+few": "one + few → few",
-            "one+many": "one + many → many",
-            "one+other": "one + other → other",
-            "few+one": "few + one → one",
-            "few+few": "few + few → few",
-            "few+many": "few + many → many",
-            "few+other": "few + other → other",
-            "many+one": "many + one → one",
-            "many+few": "many + few → few",
-            "many+many": "many + many → many",
-            "many+other": "many + other → other",
-            "other+one": "other + one → one",
-            "other+few": "other + few → few",
-            "other+many": "other + many → many",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+few": "few",
+            "one+many": "many",
+            "one+other": "other",
+            "few+one": "one",
+            "few+few": "few",
+            "few+many": "many",
+            "few+other": "other",
+            "many+one": "one",
+            "many+few": "few",
+            "many+many": "many",
+            "many+other": "other",
+            "other+one": "one",
+            "other+few": "few",
+            "other+many": "many",
+            "other+other": "other"
         }
     },
     {
@@ -2150,7 +2150,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2161,7 +2161,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2171,7 +2171,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2182,7 +2182,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2194,7 +2194,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2204,7 +2204,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2216,7 +2216,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2231,9 +2231,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -2252,7 +2252,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2263,7 +2263,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2278,15 +2278,15 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+few": "one + few → few",
-            "one+other": "one + other → other",
-            "few+one": "few + one → one",
-            "few+few": "few + few → few",
-            "few+other": "few + other → other",
-            "other+one": "other + one → one",
-            "other+few": "other + few → few",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+few": "few",
+            "one+other": "other",
+            "few+one": "one",
+            "few+few": "few",
+            "few+other": "other",
+            "other+one": "one",
+            "other+few": "few",
+            "other+other": "other"
         }
     },
     {
@@ -2304,7 +2304,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2315,7 +2315,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2325,7 +2325,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2340,7 +2340,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2354,9 +2354,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -2370,10 +2370,10 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+other": "one + other → other",
-            "other+one": "other + one → other",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+other": "other",
+            "other+one": "other",
+            "other+other": "other"
         }
     },
     {
@@ -2385,7 +2385,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2401,20 +2401,20 @@
             "other": ""
         },
         "range": {
-            "one+few": "one + few → few",
-            "one+many": "one + many → many",
-            "one+other": "one + other → other",
-            "few+few": "few + few → few",
-            "few+many": "few + many → many",
-            "few+other": "few + other → other",
-            "many+one": "many + one → one",
-            "many+few": "many + few → few",
-            "many+many": "many + many → many",
-            "many+other": "many + other → other",
-            "other+one": "other + one → one",
-            "other+few": "other + few → few",
-            "other+many": "other + many → many",
-            "other+other": "other + other → other"
+            "one+few": "few",
+            "one+many": "many",
+            "one+other": "other",
+            "few+few": "few",
+            "few+many": "many",
+            "few+other": "other",
+            "many+one": "one",
+            "many+few": "few",
+            "many+many": "many",
+            "many+other": "other",
+            "other+one": "one",
+            "other+few": "few",
+            "other+many": "many",
+            "other+other": "other"
         }
     },
     {
@@ -2430,22 +2430,22 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → few",
-            "one+two": "one + two → two",
-            "one+few": "one + few → few",
-            "one+other": "one + other → other",
-            "two+one": "two + one → few",
-            "two+two": "two + two → two",
-            "two+few": "two + few → few",
-            "two+other": "two + other → other",
-            "few+one": "few + one → few",
-            "few+two": "few + two → two",
-            "few+few": "few + few → few",
-            "few+other": "few + other → other",
-            "other+one": "other + one → few",
-            "other+two": "other + two → two",
-            "other+few": "other + few → few",
-            "other+other": "other + other → other"
+            "one+one": "few",
+            "one+two": "two",
+            "one+few": "few",
+            "one+other": "other",
+            "two+one": "few",
+            "two+two": "two",
+            "two+few": "few",
+            "two+other": "other",
+            "few+one": "few",
+            "few+two": "two",
+            "few+few": "few",
+            "few+other": "other",
+            "other+one": "few",
+            "other+two": "two",
+            "other+few": "few",
+            "other+other": "other"
         }
     },
     {
@@ -2456,7 +2456,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2467,7 +2467,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2478,7 +2478,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2489,7 +2489,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2501,7 +2501,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2512,7 +2512,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2527,12 +2527,12 @@
             "other": ""
         },
         "range": {
-            "one+many": "one + many → null",
-            "one+other": "one + other → other",
-            "many+many": "many + many → null",
-            "other+one": "other + one → other",
-            "other+many": "other + many → null",
-            "other+other": "other + other → other"
+            "one+many": "null",
+            "one+other": "other",
+            "many+many": "null",
+            "other+one": "other",
+            "other+many": "null",
+            "other+other": "other"
         }
     },
     {
@@ -2542,7 +2542,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2556,9 +2556,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -2569,7 +2569,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2584,9 +2584,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → other",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "other",
+            "other+other": "other"
         }
     },
     {
@@ -2600,7 +2600,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2611,7 +2611,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2623,7 +2623,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2644,9 +2644,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -2660,9 +2660,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -2673,7 +2673,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2686,7 +2686,7 @@
             "other": ""
         },
         "range": {
-            "other+other": "other + other → other"
+            "other+other": "other"
         }
     },
     {
@@ -2696,7 +2696,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2707,7 +2707,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2718,7 +2718,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2731,7 +2731,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2741,7 +2741,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2752,7 +2752,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2763,7 +2763,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2777,9 +2777,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -2794,9 +2794,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -2807,7 +2807,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2824,22 +2824,22 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+few": "one + few → few",
-            "one+many": "one + many → many",
-            "one+other": "one + other → other",
-            "few+one": "few + one → one",
-            "few+few": "few + few → few",
-            "few+many": "few + many → many",
-            "few+other": "few + other → other",
-            "many+one": "many + one → one",
-            "many+few": "many + few → few",
-            "many+many": "many + many → many",
-            "many+other": "many + other → other",
-            "other+one": "other + one → one",
-            "other+few": "other + few → few",
-            "other+many": "other + many → many",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+few": "few",
+            "one+many": "many",
+            "one+other": "other",
+            "few+one": "one",
+            "few+few": "few",
+            "few+many": "many",
+            "few+other": "other",
+            "many+one": "one",
+            "many+few": "few",
+            "many+many": "many",
+            "many+other": "other",
+            "other+one": "one",
+            "other+few": "few",
+            "other+many": "many",
+            "other+other": "other"
         }
     },
     {
@@ -2855,7 +2855,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2869,9 +2869,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → other",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "other",
+            "other+other": "other"
         }
     },
     {
@@ -2882,9 +2882,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -2898,9 +2898,9 @@
             "other": ""
         },
         "range": {
-            "one+other": "one + other → other",
-            "other+one": "other + one → one",
-            "other+other": "other + other → other"
+            "one+other": "other",
+            "other+one": "one",
+            "other+other": "other"
         }
     },
     {
@@ -2911,7 +2911,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2925,7 +2925,7 @@
             "other": ""
         },
         "range": {
-            "other+other": "other + other → other"
+            "other+other": "other"
         }
     },
     {
@@ -2936,7 +2936,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2947,7 +2947,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2958,7 +2958,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2969,7 +2969,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -2992,26 +2992,26 @@
             "other": ""
         },
         "range": {
-            "zero+one": "zero + one → one",
-            "zero+two": "zero + two → two",
-            "zero+few": "zero + few → few",
-            "zero+many": "zero + many → many",
-            "zero+other": "zero + other → other",
-            "one+two": "one + two → two",
-            "one+few": "one + few → few",
-            "one+many": "one + many → many",
-            "one+other": "one + other → other",
-            "two+few": "two + few → few",
-            "two+many": "two + many → many",
-            "two+other": "two + other → other",
-            "few+many": "few + many → many",
-            "few+other": "few + other → other",
-            "many+other": "many + other → other",
-            "other+one": "other + one → one",
-            "other+two": "other + two → two",
-            "other+few": "other + few → few",
-            "other+many": "other + many → many",
-            "other+other": "other + other → other"
+            "zero+one": "one",
+            "zero+two": "two",
+            "zero+few": "few",
+            "zero+many": "many",
+            "zero+other": "other",
+            "one+two": "two",
+            "one+few": "few",
+            "one+many": "many",
+            "one+other": "other",
+            "two+few": "few",
+            "two+many": "many",
+            "two+other": "other",
+            "few+many": "many",
+            "few+other": "other",
+            "many+other": "other",
+            "other+one": "one",
+            "other+two": "two",
+            "other+few": "few",
+            "other+many": "many",
+            "other+other": "other"
         }
     },
     {
@@ -3025,7 +3025,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -3035,7 +3035,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -3046,7 +3046,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -3063,7 +3063,7 @@
             "other": ""
         },
         "range": {
-            "n/a": "n/a"
+            "n/a": "a"
         }
     },
     {
@@ -3077,9 +3077,9 @@
             "other": ""
         },
         "range": {
-            "one+one": "one + one → one",
-            "one+other": "one + other → other",
-            "other+other": "other + other → other"
+            "one+one": "one",
+            "one+other": "other",
+            "other+other": "other"
         }
     }
 ]
