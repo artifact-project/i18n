@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "npx parcel",
-    "build": "npx parcel build",
+    "build": "npx parcel build --dist-dir=docs",
     "test": "jest --coverage",
     "ts-build": "tsc",
     "git-clean": "git clean -f",
