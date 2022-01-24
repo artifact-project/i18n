@@ -84,7 +84,7 @@
 				}, null, 2)});`,
 				``,
 				`/** ${comment} plural cardinal categorizer */`,
-				`const ${categorizer} = createPluralCardinalCategorizer(rules, ${generatePluralCardinalCategorizer(lang.cardinal).trim()});`,
+				`const ${categorizer} = createPluralCardinalCategorizer(${rules}, ${generatePluralCardinalCategorizer(lang.cardinal).trim()});`,
 				``,
 				`/** ${comment} plural method (cardinal & range) */`,
 				`export const ${plural} = createPlural(${rules}, ${categorizer});`,
