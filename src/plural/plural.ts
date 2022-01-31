@@ -63,7 +63,7 @@ export type PluralRules = {
 
 export type ExceptionLocale = {
 	'='?: {
-		[value: number | string]: string;
+		[value: string]: string;
 	};
 };
 export type CardinalLocale = CardinalRules;
