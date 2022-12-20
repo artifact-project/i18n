@@ -71,7 +71,6 @@ export type RangeLocale = {
 	[K in PluralCategory]?: string;
 };
 
-
 export interface CardinalPlural<CL extends CardinalLocale> {
 	(num: number | string): PluralCategory;
 	(num: number | string, locale: CL & ExceptionLocale): string;
@@ -82,12 +81,19 @@ export interface RangePlural<RL extends RangeLocale> {
 	(start: number | string, end: number | string, locale: RL & ExceptionLocale): string;
 };
 
-export interface Plural<R extends PluralRules> extends
-	CardinalPlural<R['cardinal']>,
-	RangePlural<R['cardinal']>
+type LocaleDict<T extends CardinalRules> = {
+	[K in keyof T]: string;
+} & ExceptionLocale;
+
+export interface Plural<Rules extends PluralRules> extends
+	CardinalPlural<Rules['cardinal']>,
+	RangePlural<Rules['cardinal']>
 {
-	code: R['code'];
-	range: RangePlural<R['cardinal']>;
+	code: Rules['code'];
+	range: RangePlural<Rules['cardinal']>;
+
+	create: <L extends LocaleDict<Rules['cardinal']>>(locale: L) => (num: number | string) => string;
+	createRange: <L extends LocaleDict<Rules['cardinal']>>(locale: L) => (start: number | string, end: number | string) => string;
 }
 
 export type PluralCardinalCategorizer<R extends CardinalLocale> = (n: string, i: number, f: number, v: number) => keyof R;
@@ -114,7 +120,7 @@ function setHiddenProp<
 		writable: false,
 	});
 
-	return target as R;
+	return target as any as R;
 }
 
 const rHASH = /#/g;
@@ -232,6 +238,16 @@ export function createPlural<R extends PluralRules>(
 
 	setHiddenProp(plural, 'code', rules.code);
 	setHiddenProp(plural, 'range', range);
+	setHiddenProp(plural, 'create', (locale: any) => {
+		return (num: number | string) => {
+			return cardinal(num, locale);
+		}
+	});
+	setHiddenProp(plural, 'createRange', (locale: any) => {
+		return (start: number | string, end: number | string) => {
+			return range(start, end, locale);
+		}
+	});
 
 	return plural as Plural<R>;
 }

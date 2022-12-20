@@ -119,7 +119,7 @@ describe('en', () => {
 
 describe('with locale', () => {
 	const rules = createPluralRules({
-		code: 'ru',
+		code: 'en',
 
 		cardinal: {
 			one: 'i = 1 and v = 0',
@@ -168,6 +168,19 @@ describe('with locale', () => {
 
 		expect(plural(1, locale)).toBe('1 message');
 		expect(plural(2, locale)).toBe('2 messages');
+	});
+
+	it('create', () => {
+		const cardinal = plural.create({
+			one: 'message',
+			other: 'messages',
+			'=': {
+				0: 'no message',
+			},
+		});
+
+		expect(cardinal(0)).toBe('no message');
+		expect(cardinal(1)).toBe('message');
 	});
 
 	it('range', () => {
