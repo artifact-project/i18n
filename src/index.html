@@ -75,6 +75,7 @@
 			console.log('Selected:', lang);
 
 			jsCode.value = [
+				`/* eslint-disable */`,
 				`import {createPlural, createPluralRules, createPluralCardinalCategorizer} from '@artifact-project/i18n';`,
 				``,
 				`/** ${comment} plural rules */`,
