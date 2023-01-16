@@ -14,7 +14,27 @@ npm i --save @artifact-project/i18n
 
 ---
 
-### Usage
+### Plural API
+
+```ts
+import { enPlural } from '~/plural/en'; // use plural generator
+
+export const approvalsLeftPlural = enPlural.create({
+	one: '# approval',
+	other: '# approvals',
+	'=': {
+		'1': 'one approval',
+	},
+});
+
+approvalsLeftPlural(0); // 0 approvals
+approvalsLeftPlural(1); // one approval
+approvalsLeftPlural(2); // 2 approvals
+```
+
+---
+
+### Dictionary
 
 **cfg-default-locale.ts**
 ```ts
