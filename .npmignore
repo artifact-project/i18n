@@ -2,6 +2,8 @@ __bench__
 __jest__
 coverage
 node_modules
+.parcel-cache
+__jest__
 
 # Ignore the .ts files
 **/*.ts
